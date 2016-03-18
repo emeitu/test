@@ -1,0 +1,13 @@
+#Ice.Default.Locator=IPTools/Locator:tcp -h 172.19.1.78 -p 16666
+#Ice.Default.Locator=Recommend/Locator:tcp -h 192.168.62.50 -p 9511
+Ice.Default.Locator=testcloud/Locator:tcp -h 172.19.1.78 -p 7893
+IceGrid.Node.CollocateRegistry=0
+IceGrid.Node.Data=../data/node_wmq
+IceGrid.Node.Endpoints=default -h 172.19.1.78 
+IceGrid.Node.Name=node_wmq
+IceGrid.Node.PropertiesOverride=Ice.Default.Host=172.19.1.78
+IceGrid.Node.ThreadPool.Size=2
+IceGrid.Node.ThreadPool.SizeMax=64
+#IceGrid.Node.ThreadPool.StackSize=262144
+Ice.StdErr=../log/stderr
+Ice.StdOut=../log/stdout

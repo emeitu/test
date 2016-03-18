@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<icegrid>
+	<application name="IpTools">    
+		<server-template id="IpToolsService">
+			<parameter name="Index"/>
+			<server activation="always" exe="/opt/Python-2.7/bin/python" id="wmq-${Index}">    
+				<env>PYTHONPATH=/opt/Ice-3.3.1/python/:/opt/testcloud/mingqi.wu/iptools_icegrid/iptools:/opt/testcloud/mingqi.wu/iptools_icegrid/iptools/ice:/opt/testcloud/mingqi.wu/iptools_icegrid/iptools/etc:$PYTHONPATH</env>                                     
+				<option>/opt/testcloud/mingqi.wu/iptools_icegrid/iptools/getplace.py</option>
+				<adapter name="ipplaceAdapter" endpoints="tcp" replica-group="IpToolsGroup"/>
+			</server>
+		</server-template>
+
+		<replica-group id="IpToolsGroup">
+			<load-balancing type="adaptive" load-sample="5" n-replicas="0"/>
+			<object identity="simpleIpplace" type="::Modipplace::Ipplace"/> 
+		</replica-group>
+
+
+		<node name="node1">
+			<server-instance template="IpToolsService" Index="1"/>
+		</node>  
+	</application>
+</icegrid>
