@@ -1,0 +1,19 @@
+# -*- coding=utf-8 -*-
+
+import web
+
+urls = ['/(.*)/']
+
+class handler:
+    def GET(self,path):
+        ''' '/(.*)/' redirct to '/(.*)' '''
+        web.seeother('/'+path)
+    def PUT(self,path):
+        ''' '/(.*)/' redirct to '/(.*)' '''
+        web.seeother('/'+path)
+    def POST(self,path):
+        ''' '/(.*)/' redirct to '/(.*)' '''
+        web.seeother('/'+path)
+    def DELETE(self,path):
+        ''' '/(.*)/' redirct to '/(.*)' '''
+        web.seeother('/'+path)

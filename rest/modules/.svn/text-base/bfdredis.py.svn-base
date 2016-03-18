@@ -1,0 +1,21 @@
+# -*- coding=utf-8 -*-
+
+import web
+import json
+import libredis
+import re
+import time
+
+urls = ['/bfdrest/bfdredis/(.+)/(.+)/(.+)/(.+)']
+GET_ret = 'value'
+
+def get(h,p,n,k):
+    return libredis.get(h,p,n,k)
+
+
+class handler:
+    def GET(self,h,p,n,k):
+        ''' /bfdrest/bfdredis/redis-server/port/db/key for get key;
+        '''
+        return get(h,p,n,k)
+
